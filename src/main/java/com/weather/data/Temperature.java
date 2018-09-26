@@ -7,10 +7,9 @@ import lombok.Setter;
 @Setter
 public class Temperature {
 
-	private float present;
+	private float temp;
 	private int pressure;
 	private int humidity;
-	private float min;
-	private float max;
-	
+	private float temp_min;
+	private float temp_max;
 }

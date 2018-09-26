@@ -5,8 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Coordinate {
-
-	private float lon;
-	private float lat;
+public class Clouds {
+	private int all;
 }
