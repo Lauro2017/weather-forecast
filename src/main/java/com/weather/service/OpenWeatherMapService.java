@@ -4,8 +4,8 @@ import java.net.URISyntaxException;
 
 import org.springframework.web.client.RestClientException;
 
-import com.weather.type.WeatherResponse;
+import com.weather.type.OpenWeatherMapResponse;
 
 public interface OpenWeatherMapService {
-	WeatherResponse getCityWeather(String city) throws RestClientException, URISyntaxException;
+	OpenWeatherMapResponse getCityWeather(String city) throws RestClientException, URISyntaxException;
 }

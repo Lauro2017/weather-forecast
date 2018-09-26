@@ -2,9 +2,8 @@ package com.weather.type;
 
 import java.util.List;
 
-import com.weather.data.Coordinate;
-import com.weather.data.Temperature;
-import com.weather.data.Weather;
+import com.weather.data.City;
+import com.weather.data.DailyWeathers;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -14,7 +13,6 @@ import lombok.Setter;
 @Setter
 @Builder
 public class WeatherResponse {
-	private Coordinate coordinate;
-	private List<Weather> weather;
-	private Temperature temperature;
+	private City location;
+	private List<DailyWeathers> weather;
 }

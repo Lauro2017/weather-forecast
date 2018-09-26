@@ -7,8 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CityWeather {
-	
-	private String location;
-	private List<Weather> weathers;
+public class DailyWeathers {
+	private List<Weather> weather;
+	private Temperature temperature;
 }

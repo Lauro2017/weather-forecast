@@ -7,9 +7,10 @@ import lombok.Setter;
 @Setter
 public class Temperature {
 
-	private float temp;
-	private int pressure;
-	private int humidity;
-	private float temp_min;
-	private float temp_max;
+	private float day;
+	private float min;
+	private float max;
+	private float night;
+	private float eve;
+	private float morn;
 }

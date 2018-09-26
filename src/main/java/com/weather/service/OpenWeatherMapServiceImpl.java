@@ -6,7 +6,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.weather.properties.OpenWeatherMapProperty;
 import com.weather.type.OpenWeatherMapResponse;
-import com.weather.type.WeatherResponse;
 
 @Service
 public class OpenWeatherMapServiceImpl implements OpenWeatherMapService {
@@ -15,16 +14,13 @@ public class OpenWeatherMapServiceImpl implements OpenWeatherMapService {
 	private OpenWeatherMapProperty openWeatherMapProperty;
 
 	@Override
-	public WeatherResponse getCityWeather(String city) {
+	public OpenWeatherMapResponse getCityWeather(String cityId) {
 		RestTemplate restTemplate = new RestTemplate();
-		OpenWeatherMapResponse result = restTemplate.getForObject(
-				openWeatherMapProperty.getUrl() + "?q=" + city + "&APPID=" + openWeatherMapProperty.getAppId(),
-				OpenWeatherMapResponse.class);
-		WeatherResponse weatherResponse = WeatherResponse.builder()
-				.coordinate(result.getCoord())
-				.weather(result.getWeather())
-				.temperature(result.getMain()).build();
-		return weatherResponse;
+		String url = openWeatherMapProperty.getUrl();
+		url = url.replace("${cityId}", cityId);
+		url = url.replace("${appdId}", openWeatherMapProperty.getAppId());
+		OpenWeatherMapResponse result = restTemplate.getForObject(url, OpenWeatherMapResponse.class);
+		return result;
 	}
 
 }

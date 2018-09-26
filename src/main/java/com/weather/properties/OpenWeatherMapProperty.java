@@ -1,5 +1,7 @@
 package com.weather.properties;
 
+import java.util.List;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -13,4 +15,5 @@ import lombok.Setter;
 public class OpenWeatherMapProperty {
 	private String url;
 	private String appId;
+	private List<String> cities;
 }

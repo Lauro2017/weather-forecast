@@ -5,12 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Sys {
-	private int type;
-	private int id;
-	private float message;
-	private String country;
-	private int sunrise;
-	private int sunset;
+public class City {
 
+	private int id;
+	private String name;
+	private Coordinate coord;
+	private String country;
+	private int population;
 }
